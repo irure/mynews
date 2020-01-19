@@ -53,7 +53,7 @@ class ProfileController extends Controller
         //該当するデータを上書きして保存
         $profile->fill($profile_form)->save();
         
-        return redirect('admin/profile/');
+        return redirect('admin/profile/edit');
     }
     
     public function delete(Request $request){
