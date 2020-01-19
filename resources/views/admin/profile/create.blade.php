@@ -1,7 +1,7 @@
 {{-- layouts/admin.blade.phpを読みこむ--}}
 @extends('layouts.profile')
 
-{{-- admin.blade.phpの@yield('title')に'ニュースの新規作成を埋め込む'--}}
+{{-- admin.blade.phpの@yield('title')に'Myプロフィールを埋め込む'--}}
 @section('title','Myプロフィール')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む--}}
@@ -22,7 +22,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ old('title') }}">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
