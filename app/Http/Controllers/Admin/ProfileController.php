@@ -35,7 +35,7 @@ class ProfileController extends Controller
     public function edit(Request $request)
     {
         //profile モデルからデータを受け取る
-        $profile = Profiles::find(1);
+        $profile = Profiles::find($request->id);
         if(empty($profile)){
             abort(404);
         }
@@ -60,14 +60,19 @@ class ProfileController extends Controller
         $profileHistory->edited_at=Carbon::now();
         $profileHistory->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile');
     }
     
     public function delete(Request $request){
         //該当するprofile modelを取得
-        $profile = Profile::find($request->id);
+        $profile = Profiles::find($request->id);
         //削除する
         $profile->delete();
         return redirect('admin/profile/');
+    }
+    
+    public function index(Request $request){
+        $posts = Profiles::all();
+        return view('admin.profile.index',['posts'=>$posts]);
     }
 }
