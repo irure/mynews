@@ -28,6 +28,7 @@
         <link href="{{ secure_asset('css/ftont.css')}}" rel="stylesheet">
     </head>
     <body>
+        <p>デプロイテストです</p>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。--}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
